@@ -1,593 +1,1616 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaustav Aswal | Digital Marketing Portfolio</title>
-    <meta name="description" content="Portfolio of Kaustav Aswal - Digital Marketing Executive specializing in Social Media Marketing, Meta Ads, WordPress, SEO, and AI Prompt Engineering. Open to opportunities.">
-    <meta name="keywords" content="Kaustav Aswal, Digital Marketing, Social Media Marketing, Meta Ads, SEO, WordPress, AI Prompt Engineer, Portfolio, Hire">
-    <meta name="author" content="Kaustav Aswal">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Kaustav Aswal — Digital Marketing Executive based in Delhi. Social media marketing, Meta Ads, SEO, creative content, and AI-powered marketing."
+  >
+  <meta name="theme-color" content="#0c0e12">
+  <title>Kaustav Aswal | Digital Marketing & AI</title>
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Kaustav Aswal | Digital Marketing Portfolio">
-    <meta property="og:description" content="Digital Marketing Executive | Social Media Marketing, Meta Ads, SEO, WordPress & AI. Available for hire.">
-    <meta property="og:type" content="website">
+  <style>
+    /* =========================
+       THEME
+    ========================== */
+    :root {
+      --bg: #0c0e12;
+      --surface: #13161c;
+      --text: #f1f3eb;
+      --muted: #a4abb7;
+      --accent: #c3f56b;
+      --purple: #b7a4ff;
+      --line: rgba(255,255,255,.11);
+      --radius: 22px;
+    }
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    * { box-sizing: border-box; }
 
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
 
-    <link rel="stylesheet" href="style.css">
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { line-height: 1.15; }
+    ::selection { color: var(--bg); background: var(--accent); }
+
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 5px;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .muted { color: var(--muted); }
+    .accent { color: var(--accent); }
+
+    .skip {
+      position: fixed;
+      top: -100px;
+      left: 16px;
+      z-index: 100;
+      background: var(--accent);
+      color: var(--bg);
+      padding: 12px 18px;
+      border-radius: 8px;
+    }
+
+    .skip:focus { top: 12px; }
+
+    .progress {
+      position: fixed;
+      inset: 0 0 auto;
+      height: 3px;
+      z-index: 60;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      pointer-events: none;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--line);
+      background: rgba(12,14,18,.9);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      flex-shrink: 0;
+      font-size: 1.35rem;
+      font-weight: 850;
+      letter-spacing: -.06em;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      font-size: .85rem;
+      color: var(--muted);
+      white-space: nowrap;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-links .nav-cta {
+      padding: 9px 17px;
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      color: var(--text);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 95px 0 65px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 640px;
+      height: 640px;
+      top: -210px;
+      right: -310px;
+      background: radial-gradient(circle, #c3f56b12, transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      gap: 42px;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 13px;
+      border: 1px solid #c3f56b30;
+      border-radius: 99px;
+      background: #c3f56b09;
+      color: var(--accent);
+      font-size: .76rem;
+      font-weight: 650;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 15px #c3f56b77;
+    }
+
+    .hello {
+      margin: 30px 0 10px;
+      font-size: 1.02rem;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin-bottom: 23px;
+      font-size: clamp(3.4rem, 7.2vw, 6.5rem);
+      font-weight: 850;
+      line-height: .97;
+      letter-spacing: -.075em;
+    }
+
+    h1 span { display: block; color: var(--accent); }
+
+    .hero-role {
+      font-size: .77rem;
+      font-weight: 650;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--purple);
+    }
+
+    .hero-description {
+      max-width: 560px;
+      margin-block: 20px 0;
+      font-size: 1.03rem;
+      color: var(--muted);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 13px 22px;
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      font-size: .87rem;
+      font-weight: 700;
+      transition: transform .25s, background .25s, box-shadow .25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      background: #20252d;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg);
+    }
+
+    .btn-primary:hover {
+      background: #d0ff85;
+      box-shadow: 0 10px 35px #c3f56b20;
+    }
+
+    .hero-email {
+      display: inline-block;
+      margin-top: 23px;
+      font-size: .84rem;
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    .hero-email:hover { color: var(--accent); }
+
+    /* Decorative brand illustration — not an analytics chart. */
+    .hero-visual {
+      position: relative;
+      height: 440px;
+      display: grid;
+      place-items: center;
+      isolation: isolate;
+    }
+
+    .visual-grid {
+      position: absolute;
+      inset: 15px;
+      z-index: -1;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 36px 36px;
+      opacity: .25;
+      border-radius: 50%;
+      mask-image: radial-gradient(circle, black 25%, transparent 70%);
+    }
+
+    .orbit {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border: 1px solid #c3f56b30;
+      border-radius: 50%;
+      animation: spin 26s linear infinite;
+    }
+
+    .orbit::before {
+      content: "";
+      position: absolute;
+      top: 42px;
+      left: 42px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 22px #c3f56b55;
+    }
+
+    .orbit.second {
+      width: 260px;
+      height: 260px;
+      border-style: dashed;
+      border-color: #b7a4ff40;
+      animation-direction: reverse;
+      animation-duration: 35s;
+    }
+
+    .orbit.second::before {
+      top: 30px;
+      left: 30px;
+      background: var(--purple);
+      width: 10px;
+      height: 10px;
+    }
+
+    .monogram {
+      width: 174px;
+      height: 174px;
+      border-radius: 40px;
+      display: grid;
+      place-items: center;
+      font-size: 4.7rem;
+      font-weight: 900;
+      letter-spacing: -.12em;
+      padding-right: 9px;
+      color: var(--accent);
+      border: 1px solid #c3f56b45;
+      background: linear-gradient(145deg, #272e20, #12161a);
+      box-shadow: 0 25px 70px #0005, inset 0 1px 0 #ffffff15;
+      transform: rotate(-8deg);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .floating-label {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 17px;
+      background: rgba(22,26,33,.95);
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      box-shadow: 0 15px 30px #0003;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .floating-label strong {
+      display: block;
+      font-size: 1.15rem;
+      line-height: 1.25;
+    }
+
+    .floating-label small { color: var(--muted); font-size: .68rem; }
+    .floating-label .symbol { font-size: 1.5rem; color: var(--accent); }
+    .label-one { left: 0; top: 60px; }
+    .label-two { right: 0; bottom: 70px; animation-delay: -3s; }
+    .label-two .symbol { color: var(--purple); }
+
+    .visual-caption {
+      position: absolute;
+      bottom: 8px;
+      color: var(--muted);
+      font-size: .65rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .hero-copy > * { animation: enter .85s both; }
+    .hero-copy h1 { animation-delay: .1s; }
+    .hero-copy .hero-description { animation-delay: .2s; }
+    .hero-copy .buttons { animation-delay: .3s; }
+
+    /* =========================
+       SCROLLING STRIP
+    ========================== */
+    .ticker {
+      overflow: hidden;
+      padding: 19px 0;
+      border-block: 1px solid var(--line);
+      background: #111419;
+    }
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 32s linear infinite;
+    }
+
+    .ticker-group {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding-right: 32px;
+    }
+
+    .ticker span {
+      color: var(--muted);
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .ticker b { color: var(--accent); font-weight: 400; }
+
+    /* =========================
+       SHARED SECTIONS
+    ========================== */
+    .section { padding-block: 95px; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 35px;
+      margin-bottom: 34px;
+    }
+
+    .section-head > p {
+      max-width: 330px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    .eyebrow {
+      display: block;
+      margin-bottom: 13px;
+      font-size: .7rem;
+      font-weight: 650;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: var(--accent);
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(2rem, 4.5vw, 3.3rem);
+      letter-spacing: -.055em;
+    }
+
+    h2 em { color: var(--muted); font-style: normal; }
+
+    .panel {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius);
+    }
+
+    .motion-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+    }
+
+    .motion-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        350px circle at var(--mx, 50%) var(--my, 50%),
+        #c3f56b0d,
+        transparent 65%
+      );
+      opacity: 0;
+      transition: opacity .3s;
+      pointer-events: none;
+    }
+
+    .motion-card:hover {
+      transform: translateY(-5px);
+      border-color: #c3f56b40;
+      box-shadow: 0 18px 40px #0002;
+    }
+
+    .motion-card:hover::before { opacity: 1; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .tags span {
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      color: var(--muted);
+      font-size: .72rem;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 65px;
+    }
+
+    .about-heading h2 { max-width: 400px; }
+
+    .location {
+      display: inline-flex;
+      gap: 9px;
+      align-items: center;
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .location span { color: var(--accent); }
+
+    .about-copy p { color: var(--muted); margin-bottom: 19px; }
+    .about-copy strong { color: var(--text); font-weight: 650; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 42px;
+      overflow: hidden;
+    }
+
+    .stat { padding: 29px 20px; text-align: center; }
+    .stat + .stat { border-left: 1px solid var(--line); }
+
+    .stat strong {
+      display: block;
+      color: var(--accent);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      letter-spacing: -.055em;
+    }
+
+    .stat span { display: block; margin-top: 7px; font-size: .78rem; color: var(--muted); }
+
+    /* =========================
+       SERVICES
+    ========================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service { padding: 28px; }
+
+    .service-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    .service-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      color: var(--accent);
+      background: #c3f56b0b;
+      border: 1px solid #c3f56b20;
+      border-radius: 12px;
+      font-size: 1.35rem;
+    }
+
+    .service-number { font-size: .7rem; color: var(--muted); }
+    .service h3 { margin-bottom: 13px; font-size: 1.1rem; letter-spacing: -.025em; }
+    .service p { margin: 0; font-size: .87rem; color: var(--muted); }
+
+    /* =========================
+       SKILLS
+    ========================== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card { grid-column: span 2; padding: 25px; }
+    .skill-card:nth-last-child(-n+2) { grid-column: span 3; }
+    .skill-card h3 { font-size: 1rem; margin-bottom: 19px; }
+
+    .skill-card .tags span {
+      background: #ffffff03;
+      padding: 7px 11px;
+      transition: color .2s, border-color .2s;
+    }
+
+    .skill-card .tags span:hover { color: var(--accent); border-color: #c3f56b55; }
+
+    /* =========================
+       EXPERIENCE
+    ========================== */
+    .timeline { position: relative; padding-left: 30px; }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 10px;
+      bottom: 35px;
+      width: 1px;
+      background: linear-gradient(var(--accent), var(--line));
+    }
+
+    .job { position: relative; margin-bottom: 24px; }
+
+    .job::before {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: -30px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      background: var(--bg);
+      box-shadow: 0 0 0 5px var(--bg);
+    }
+
+    .job-inner { padding: 30px; }
+
+    .job-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .job h3 { font-size: 1.25rem; margin-bottom: 8px; letter-spacing: -.03em; }
+    .company { color: var(--accent); font-size: .91rem; }
+    .job-meta { text-align: right; font-size: .78rem; color: var(--muted); flex-shrink: 0; }
+    .job-meta span { display: block; }
+
+    .job ul { padding-left: 19px; margin-block: 24px; }
+    .job li { padding-left: 4px; margin-bottom: 9px; font-size: .9rem; color: var(--muted); }
+    .job li::marker { color: var(--accent); }
+
+    /* =========================
+       CERTIFICATIONS
+    ========================== */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .cert {
+      display: flex;
+      gap: 17px;
+      padding: 23px;
+      align-items: flex-start;
+    }
+
+    .cert-symbol {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 37px;
+      height: 37px;
+      border-radius: 10px;
+      background: #b7a4ff10;
+      color: var(--purple);
+      font-size: 1.05rem;
+    }
+
+    .cert h3 { font-size: .98rem; margin-bottom: 7px; }
+    .cert p { color: var(--muted); margin-bottom: 5px; font-size: .83rem; }
+    .cert small { color: var(--accent); font-size: .72rem; }
+    .cert.upcoming { border-style: dashed; background: transparent; }
+
+    /* =========================
+       EDUCATION
+    ========================== */
+    .education-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      padding: 35px;
+    }
+
+    .education-card h3 {
+      font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+      margin-bottom: 12px;
+      letter-spacing: -.03em;
+    }
+
+    .education-card p { color: var(--muted); margin-bottom: 5px; font-size: .92rem; }
+
+    .education-date {
+      white-space: nowrap;
+      padding: 10px 18px;
+      border: 1px solid #c3f56b35;
+      border-radius: 99px;
+      color: var(--accent);
+      font-size: .85rem;
+    }
+
+    /* =========================
+       CONTACT & FOOTER
+    ========================== */
+    .contact-section { padding-top: 55px; }
+
+    .contact-box {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px, 6vw, 65px);
+      background:
+        radial-gradient(ellipse at top right, #c3f56b0f, transparent 65%),
+        var(--surface);
+    }
+
+    .contact-box h2 { max-width: 750px; font-size: clamp(2.5rem, 6vw, 4.6rem); }
+
+    .contact-copy { max-width: 670px; color: var(--muted); margin-top: 23px; }
+
+    .contact-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 35px;
+    }
+
+    .contact-link {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      border: 1px solid var(--line);
+      background: #0c0e1255;
+      border-radius: 13px;
+      padding: 18px 20px;
+      transition: border-color .25s, background .25s;
+    }
+
+    .contact-link:hover { border-color: #c3f56b55; background: #c3f56b06; }
+    .contact-link small { display: block; color: var(--muted); font-size: .69rem; margin-bottom: 3px; }
+    .contact-link strong { font-size: .88rem; font-weight: 600; overflow-wrap: anywhere; }
+    .contact-link > span:last-child { color: var(--accent); font-size: 1.25rem; }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      padding-block: 28px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .76rem;
+    }
+
+    .footer p { margin: 0; }
+
+    .motion-toggle {
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      padding: 7px 12px;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: .72rem;
+    }
+
+    .motion-toggle:hover { color: var(--text); }
+
+    /* =========================
+       ANIMATIONS
+    ========================== */
+    .reveal {
+      transition: opacity .7s ease, transform .7s ease;
+      transition-delay: var(--delay, 0ms);
+    }
+
+    .reveal.pending { opacity: 0; transform: translateY(25px); }
+
+    @keyframes enter {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -13px; }
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    /* Manual motion control. */
+    html.motion-off { scroll-behavior: auto; }
+
+    html.motion-off *,
+    html.motion-off *::before,
+    html.motion-off *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    html.motion-off .reveal.pending { opacity: 1; transform: none; }
+    html.motion-off .motion-card:hover,
+    html.motion-off .btn:hover { transform: none; }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+    @media (max-width: 1000px) {
+      .nav-links { gap: 17px; }
+      .hero-grid { gap: 15px; }
+      .hero-visual { height: 390px; }
+      .orbit { width: 290px; height: 290px; }
+      .orbit::before { top: 34px; left: 34px; }
+      .orbit.second { width: 225px; height: 225px; }
+      .orbit.second::before { top: 26px; left: 26px; }
+      .monogram { width: 145px; height: 145px; font-size: 4rem; }
+      .floating-label { padding: 10px 12px; }
+      .floating-label strong { font-size: 1rem; }
+      .label-one { top: 40px; }
+      .label-two { bottom: 55px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { gap: 35px; }
+    }
+
+    @media (max-width: 760px) {
+      html { scroll-padding-top: 130px; }
+      .wrap { width: min(1180px, calc(100% - 32px)); }
+
+      .nav {
+        min-height: auto;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        padding-block: 12px;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        gap: 22px;
+        padding: 3px 5px 8px;
+        scrollbar-width: thin;
+      }
+
+      .nav-links a { font-size: .76rem; }
+      .nav-links .nav-cta { padding: 0; border: 0; color: var(--accent); }
+
+      .hero { padding-top: 55px; padding-bottom: 35px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      h1 { font-size: clamp(3.8rem, 13vw, 6rem); }
+      .hero-visual { width: min(420px, 100%); margin-inline: auto; height: 350px; }
+      .label-one { left: 8px; top: 25px; }
+      .label-two { right: 8px; bottom: 40px; }
+
+      .section { padding-block: 65px; }
+      .section-head { flex-direction: column; align-items: flex-start; gap: 18px; }
+      .section-head > p { max-width: 100%; }
+      .about-grid { grid-template-columns: 1fr; gap: 25px; }
+
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(3) { border-left: 0; }
+      .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .skill-card, .skill-card:nth-last-child(-n+2) { grid-column: span 1; }
+      .skill-card:last-child { grid-column: 1 / -1; }
+
+      .job-head { flex-direction: column; gap: 13px; }
+      .job-meta { text-align: left; }
+      .job-inner { padding: 23px; }
+      .cert-grid { grid-template-columns: 1fr; }
+      .education-card { align-items: flex-start; flex-direction: column; padding: 27px; }
+      .contact-links { grid-template-columns: 1fr; }
+      .footer { flex-wrap: wrap; }
+    }
+
+    @media (max-width: 480px) {
+      .services-grid, .skills-grid { grid-template-columns: 1fr; }
+      .skill-card:last-child { grid-column: auto; }
+      .service { padding: 25px; }
+      .hero-role { font-size: .66rem; letter-spacing: .08em; }
+      .availability { font-size: .69rem; }
+      .timeline { padding-left: 23px; }
+      .job::before { left: -23px; }
+      .job-inner { padding: 20px; }
+      .contact-link { padding: 15px; }
+      .contact-link strong { font-size: .8rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal.pending { opacity: 1; transform: none; }
+      .motion-card:hover, .btn:hover { transform: none; }
+    }
+  </style>
 </head>
+
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"></div>
 
-    <!-- ============ NAVIGATION ============ -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">Kaustav<span class="logo-dot">.</span></a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="resume/index.html" class="nav-link nav-cta"><i class="fas fa-download"></i> Resume</a></li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
+  <header class="header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="logo" href="#home" aria-label="Kaustav Aswal — home">
+        kaustav<span>.</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#certifications">Certifications</a>
+        <a class="nav-cta" href="#contact">Let’s talk ↗</a>
+      </div>
     </nav>
+  </header>
 
-    <!-- ============ HERO SECTION ============ -->
-    <section class="hero" id="hero">
-        <div class="hero-bg-grid"></div>
-        <div class="hero-bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="availability">
+            <span class="status-dot" aria-hidden="true"></span>
+            Open to Work · Available for Hire
+          </div>
+
+          <p class="hello">Hello, I’m</p>
+
+          <h1 id="hero-title">Kaustav <span>Aswal.</span></h1>
+
+          <p class="hero-role">
+            Digital Marketing Executive · Delhi, India
+          </p>
+
+          <p class="hero-description">
+            I help brands grow through creative content, data-driven
+            marketing strategies, and AI-powered solutions to
+            <strong class="accent">turn followers into customers.</strong>
+          </p>
+
+          <div class="buttons">
+            <a
+              class="btn btn-primary"
+              href="mailto:kaustavaswal1@gmail.com?subject=Work%20opportunity"
+            >
+              Hire Me <span aria-hidden="true">↗</span>
+            </a>
+
+            <!-- Upload your actual résumé as resume.pdf beside index.html. -->
+            <a class="btn" href="./resume.pdf" download>
+              Download Resume <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+          <a class="hero-email" href="mailto:kaustavaswal1@gmail.com">
+            kaustavaswal1@gmail.com
+          </a>
         </div>
-        <div class="hero-content">
-            <div class="hire-badge">
-                <span class="hire-dot"></span> Open to Work | Available for Hire
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="visual-grid"></div>
+          <div class="orbit"></div>
+          <div class="orbit second"></div>
+          <div class="monogram">KA</div>
+
+          <div class="floating-label label-one">
+            <span class="symbol">↗</span>
+            <div>
+              <strong>40K+</strong>
+              <small>Organic followers</small>
             </div>
-            <p class="hero-greeting">Hello, I'm</p>
-            <h1 class="hero-name">Kaustav Aswal</h1>
-            <div class="hero-typing-wrapper">
-                <span class="hero-typing-prefix">I'm a&nbsp;</span>
-                <span class="hero-typed" id="typedText"></span>
-                <span class="hero-cursor">|</span>
+          </div>
+
+          <div class="floating-label label-two">
+            <span class="symbol">✦</span>
+            <div>
+              <strong>AI × Creativity</strong>
+              <small>Built for brand growth</small>
             </div>
-            <p class="hero-tagline">
-                I help brands grow through creative content, data-driven marketing strategies,
-                and AI-powered solutions to turn followers into customers.
-            </p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">
-                    <i class="fas fa-paper-plane"></i> Hire Me
-                </a>
-                <a href="resume/index.html" class="btn btn-outline">
-                    <i class="fas fa-file-alt"></i> Download Resume
-                </a>
-            </div>
-            <div class="hero-socials">
-                <a href="https://www.linkedin.com/in/kaustavaswal/" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/uyu23" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:kaustavaswal1@gmail.com" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
+          </div>
+
+          <span class="visual-caption">Create. Connect. Convert.</span>
         </div>
+      </div>
     </section>
 
-    <!-- ============ ABOUT SECTION ============ -->
-    <section class="section about" id="about">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">01.</span> About Me
-            </h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        I am a <strong>Digital Marketing Executive</strong> with hands-on experience in
-                        Social Media Marketing, Meta Ads, WordPress, and AI Prompt Engineering. I help
-                        businesses build their online presence through creative content, effective
-                        marketing strategies, and AI-powered solutions.
-                    </p>
-                    <p>
-                        With a proven track record of growing <strong>40,000+ organic followers</strong>
-                        and generating hundreds of thousands of impressions, I combine creativity with
-                        data-driven insights to deliver results that matter.
-                    </p>
-                    <p>
-                        I believe digital marketing is a combination of creativity, data, and continuous
-                        learning. I stay updated with the latest marketing trends and AI technologies to improve
-                        campaign performance and deliver better ROI for brands.
-                    </p>
-                    <div class="about-highlights">
-                        <div class="highlight-item" data-animate>
-                            <span class="highlight-number" data-count="40">0</span><span class="highlight-suffix">K+</span>
-                            <span class="highlight-label">Organic Followers</span>
-                        </div>
-                        <div class="highlight-item" data-animate>
-                            <span class="highlight-number" data-count="7">0</span><span class="highlight-suffix">+</span>
-                            <span class="highlight-label">Certifications</span>
-                        </div>
-                        <div class="highlight-item" data-animate>
-                            <span class="highlight-number" data-count="1">0</span><span class="highlight-suffix">+</span>
-                            <span class="highlight-label">Year Experience</span>
-                        </div>
-                        <div class="highlight-item" data-animate>
-                            <span class="highlight-number" data-count="10">0</span><span class="highlight-suffix">+</span>
-                            <span class="highlight-label">Client Projects</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-visual">
-                    <!-- Animated Avatar replacing photo -->
-                    <div class="avatar-container">
-                        <div class="avatar-ring avatar-ring-1"></div>
-                        <div class="avatar-ring avatar-ring-2"></div>
-                        <div class="avatar-ring avatar-ring-3"></div>
-                        <div class="avatar-core">
-                            <span class="avatar-initials">KA</span>
-                        </div>
-                        <div class="avatar-orbit-dot avatar-dot-1"></div>
-                        <div class="avatar-orbit-dot avatar-dot-2"></div>
-                        <div class="avatar-orbit-dot avatar-dot-3"></div>
-                        <div class="avatar-orbit-dot avatar-dot-4"></div>
-                        <!-- Floating icons around avatar -->
-                        <div class="avatar-float-icon float-icon-1"><i class="fab fa-facebook-f"></i></div>
-                        <div class="avatar-float-icon float-icon-2"><i class="fas fa-bullhorn"></i></div>
-                        <div class="avatar-float-icon float-icon-3"><i class="fas fa-chart-line"></i></div>
-                        <div class="avatar-float-icon float-icon-4"><i class="fas fa-robot"></i></div>
-                        <div class="avatar-float-icon float-icon-5"><i class="fab fa-google"></i></div>
-                    </div>
-                </div>
-            </div>
+    <!-- Decorative strip; skills are listed accessibly below. -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="ticker-group">
+          <span>Social Media</span><b>✦</b>
+          <span>Meta Ads</span><b>✦</b>
+          <span>AI Marketing</span><b>✦</b>
+          <span>Content Strategy</span><b>✦</b>
+          <span>SEO</span><b>✦</b>
+          <span>Creative Design</span><b>✦</b>
         </div>
+        <div class="ticker-group">
+          <span>Social Media</span><b>✦</b>
+          <span>Meta Ads</span><b>✦</b>
+          <span>AI Marketing</span><b>✦</b>
+          <span>Content Strategy</span><b>✦</b>
+          <span>SEO</span><b>✦</b>
+          <span>Creative Design</span><b>✦</b>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="section wrap" id="about" aria-labelledby="about-title">
+      <div class="about-grid">
+        <div class="about-heading reveal">
+          <span class="eyebrow">01 / About Me</span>
+          <h2 id="about-title">
+            Creativity meets<br><em>data & strategy.</em>
+          </h2>
+          <p class="location"><span aria-hidden="true">⌖</span> Based in Delhi, India</p>
+        </div>
+
+        <div class="about-copy reveal">
+          <p>
+            I am a <strong>Digital Marketing Executive</strong> with hands-on
+            experience in Social Media Marketing, Meta Ads, WordPress, and
+            AI Prompt Engineering. I help businesses build their online
+            presence through creative content, effective marketing strategies,
+            and AI-powered solutions.
+          </p>
+          <p>
+            With a proven track record of growing
+            <strong>40,000+ organic followers</strong> and generating
+            hundreds of thousands of impressions, I combine creativity
+            with data-driven insights to deliver results that matter.
+          </p>
+          <p>
+            I believe digital marketing is a combination of creativity,
+            data, and continuous learning. I stay updated with the latest
+            marketing trends and AI technologies to improve campaign
+            performance and deliver better ROI for brands.
+          </p>
+        </div>
+      </div>
+
+      <div class="stats panel reveal">
+        <div class="stat"><strong>40K+</strong><span>Organic Followers</span></div>
+        <div class="stat"><strong>7+</strong><span>Certifications</span></div>
+        <div class="stat"><strong>1+</strong><span>Year Experience</span></div>
+        <div class="stat"><strong>5+</strong><span>Client Projects</span></div>
+      </div>
     </section>
 
-    <!-- ============ SERVICES / WHAT I DO ============ -->
-    <section class="section services" id="services">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">02.</span> What I Do
-            </h2>
-            <p class="section-subtitle">I offer end-to-end digital marketing services to help your brand grow online.</p>
-            <div class="services-grid">
-
-                <div class="service-card" data-animate>
-                    <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
-                    <h3>Social Media Marketing</h3>
-                    <p>Strategic content planning, scheduling, community management, and audience growth across Instagram, Facebook, and LinkedIn.</p>
-                </div>
-
-                <div class="service-card" data-animate>
-                    <div class="service-icon"><i class="fab fa-meta"></i></div>
-                    <h3>Meta Ads Management</h3>
-                    <p>End-to-end Facebook and Instagram ad campaigns: audience targeting, A/B testing, budget optimization, and performance tracking.</p>
-                </div>
-
-                <div class="service-card" data-animate>
-                    <div class="service-icon"><i class="fas fa-search"></i></div>
-                    <h3>SEO & Content Strategy</h3>
-                    <p>Keyword research, on-page SEO, content calendars, blog management, and organic visibility improvement.</p>
-                </div>
-
-                <div class="service-card" data-animate>
-                    <div class="service-icon"><i class="fas fa-robot"></i></div>
-                    <h3>AI-Powered Marketing</h3>
-                    <p>Leveraging ChatGPT, Claude AI, Midjourney, and DALL·E for content creation, prompt engineering, and marketing automation.</p>
-                </div>
-
-                <div class="service-card" data-animate>
-                    <div class="service-icon"><i class="fab fa-wordpress"></i></div>
-                    <h3>WordPress Management</h3>
-                    <p>Website setup, maintenance, plugin management, landing pages, and blog publishing for business websites.</p>
-                </div>
-
-                <div class="service-card" data-animate>
-                    <div class="service-icon"><i class="fas fa-palette"></i></div>
-                    <h3>Creative Design</h3>
-                    <p>Eye-catching social media creatives, Reels, carousels, banners, and brand assets designed using Canva and AI tools.</p>
-                </div>
-
-            </div>
+    <!-- SERVICES -->
+    <section class="section wrap" id="services" aria-labelledby="services-title">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">02 / What I Do</span>
+          <h2 id="services-title">Your brand. <em>Next level.</em></h2>
         </div>
+        <p>
+          End-to-end digital marketing services to help your brand grow online.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service panel motion-card reveal">
+          <div class="service-top">
+            <span class="service-icon" aria-hidden="true">↗</span>
+            <span class="service-number">01</span>
+          </div>
+          <h3>Social Media Marketing</h3>
+          <p>
+            Strategic content planning, scheduling, community management,
+            and audience growth across Instagram, Facebook, and LinkedIn.
+          </p>
+        </article>
+
+        <article class="service panel motion-card reveal">
+          <div class="service-top">
+            <span class="service-icon" aria-hidden="true">◎</span>
+            <span class="service-number">02</span>
+          </div>
+          <h3>Meta Ads Management</h3>
+          <p>
+            End-to-end Facebook and Instagram ad campaigns: audience
+            targeting, A/B testing, budget optimization, and performance tracking.
+          </p>
+        </article>
+
+        <article class="service panel motion-card reveal">
+          <div class="service-top">
+            <span class="service-icon" aria-hidden="true">⌕</span>
+            <span class="service-number">03</span>
+          </div>
+          <h3>SEO & Content Strategy</h3>
+          <p>
+            Keyword research, on-page SEO, content calendars, blog management,
+            and organic visibility improvement.
+          </p>
+        </article>
+
+        <article class="service panel motion-card reveal">
+          <div class="service-top">
+            <span class="service-icon" aria-hidden="true">✦</span>
+            <span class="service-number">04</span>
+          </div>
+          <h3>AI-Powered Marketing</h3>
+          <p>
+            Leveraging ChatGPT, Claude AI, Midjourney, and DALL·E for content
+            creation, prompt engineering, and marketing automation.
+          </p>
+        </article>
+
+        <article class="service panel motion-card reveal">
+          <div class="service-top">
+            <span class="service-icon" aria-hidden="true">▤</span>
+            <span class="service-number">05</span>
+          </div>
+          <h3>WordPress Management</h3>
+          <p>
+            Website setup, maintenance, plugin management, landing pages,
+            and blog publishing for business websites.
+          </p>
+        </article>
+
+        <article class="service panel motion-card reveal">
+          <div class="service-top">
+            <span class="service-icon" aria-hidden="true">◇</span>
+            <span class="service-number">06</span>
+          </div>
+          <h3>Creative Design</h3>
+          <p>
+            Eye-catching social media creatives, Reels, carousels, banners,
+            and brand assets designed using Canva and AI tools.
+          </p>
+        </article>
+      </div>
     </section>
 
-    <!-- ============ SKILLS SECTION ============ -->
-    <section class="section skills" id="skills">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">03.</span> Skills & Tools
-            </h2>
-            <div class="skills-categories">
-
-                <div class="skill-category" data-animate>
-                    <div class="skill-category-icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h3>Digital Marketing</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Digital Strategy</span>
-                        <span class="skill-tag">Social Media Marketing</span>
-                        <span class="skill-tag">Meta Ads</span>
-                        <span class="skill-tag">Google Ads</span>
-                        <span class="skill-tag">Content Strategy</span>
-                        <span class="skill-tag">Campaign Management</span>
-                        <span class="skill-tag">Lead Generation</span>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-animate>
-                    <div class="skill-category-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>SEO & Analytics</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">SEO</span>
-                        <span class="skill-tag">Keyword Research</span>
-                        <span class="skill-tag">Google Analytics</span>
-                        <span class="skill-tag">Performance Tracking</span>
-                        <span class="skill-tag">Semrush</span>
-                        <span class="skill-tag">On-Page SEO</span>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-animate>
-                    <div class="skill-category-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Design & Content</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Canva</span>
-                        <span class="skill-tag">Graphic Design</span>
-                        <span class="skill-tag">Content Creation</span>
-                        <span class="skill-tag">Reels & Videos</span>
-                        <span class="skill-tag">Copywriting</span>
-                        <span class="skill-tag">Creative Campaigns</span>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-animate>
-                    <div class="skill-category-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>AI & Technology</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AI Prompt Engineering</span>
-                        <span class="skill-tag">ChatGPT</span>
-                        <span class="skill-tag">Claude AI</span>
-                        <span class="skill-tag">Midjourney</span>
-                        <span class="skill-tag">DALL·E</span>
-                        <span class="skill-tag">WordPress</span>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-animate>
-                    <div class="skill-category-icon">
-                        <i class="fas fa-share-nodes"></i>
-                    </div>
-                    <h3>Platforms</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Instagram</span>
-                        <span class="skill-tag">Facebook</span>
-                        <span class="skill-tag">LinkedIn</span>
-                        <span class="skill-tag">YouTube</span>
-                        <span class="skill-tag">Meta Business Suite</span>
-                        <span class="skill-tag">HubSpot</span>
-                    </div>
-                </div>
-            </div>
+    <!-- SKILLS -->
+    <section class="section wrap" id="skills" aria-labelledby="skills-title">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">03 / Skills & Tools</span>
+          <h2 id="skills-title">The toolkit <em>behind the work.</em></h2>
         </div>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card panel motion-card reveal">
+          <h3>Digital Marketing</h3>
+          <div class="tags">
+            <span>Digital Strategy</span><span>Social Media Marketing</span>
+            <span>Meta Ads</span><span>Google Ads</span>
+            <span>Content Strategy</span><span>Campaign Management</span>
+            <span>Lead Generation</span>
+          </div>
+        </article>
+
+        <article class="skill-card panel motion-card reveal">
+          <h3>SEO & Analytics</h3>
+          <div class="tags">
+            <span>SEO</span><span>Keyword Research</span>
+            <span>Google Analytics</span><span>Performance Tracking</span>
+            <span>Semrush</span><span>On-Page SEO</span>
+          </div>
+        </article>
+
+        <article class="skill-card panel motion-card reveal">
+          <h3>Design & Content</h3>
+          <div class="tags">
+            <span>Canva</span><span>Graphic Design</span>
+            <span>Content Creation</span><span>Reels & Videos</span>
+            <span>Copywriting</span><span>Creative Campaigns</span>
+          </div>
+        </article>
+
+        <article class="skill-card panel motion-card reveal">
+          <h3>AI & Technology</h3>
+          <div class="tags">
+            <span>AI Prompt Engineering</span><span>ChatGPT</span>
+            <span>Claude AI</span><span>Midjourney</span>
+            <span>DALL·E</span><span>WordPress</span>
+          </div>
+        </article>
+
+        <article class="skill-card panel motion-card reveal">
+          <h3>Platforms</h3>
+          <div class="tags">
+            <span>Instagram</span><span>Facebook</span><span>LinkedIn</span>
+            <span>YouTube</span><span>Meta Business Suite</span><span>HubSpot</span>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- ============ EXPERIENCE SECTION ============ -->
-    <section class="section experience" id="experience">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">04.</span> Experience
-            </h2>
-            <div class="timeline">
-
-                <div class="timeline-item" data-animate>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <h3 class="timeline-role">Founder & AI Content Creator</h3>
-                                <p class="timeline-company">
-                                    <i class="fas fa-building"></i> Okkaustav (Personal Brand)
-                                </p>
-                            </div>
-                            <span class="timeline-date">
-                                <i class="fas fa-calendar-alt"></i> Apr 2026 - Jun 2026
-                            </span>
-                        </div>
-                        <p class="timeline-location">
-                            <i class="fas fa-map-marker-alt"></i> Delhi, India · Remote
-                        </p>
-                        <ul class="timeline-details">
-                            <li>Built and scaled a personal brand focused on AI content, prompt engineering, and digital creativity</li>
-                            <li>Grew following to <strong>40,000+ followers</strong> organically through strategic content and community engagement</li>
-                            <li>Generated <strong>hundreds of thousands of impressions</strong> through high-performing Reels and AI content</li>
-                            <li>Created viral AI prompts, visual content, and educational posts driving massive audience engagement</li>
-                            <li>Executed end-to-end content strategy with posting schedules and platform analytics</li>
-                            <li>Designed creatives using Canva and AI-powered design tools (Midjourney, DALL·E)</li>
-                        </ul>
-                        <div class="timeline-tags">
-                            <span>Content Strategy</span>
-                            <span>AI Prompts</span>
-                            <span>Organic Growth</span>
-                            <span>Canva</span>
-                            <span>Analytics</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-animate>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <h3 class="timeline-role">Digital Marketing Executive</h3>
-                                <p class="timeline-company">
-                                    <i class="fas fa-building"></i> Travel Visa Holidays
-                                </p>
-                            </div>
-                            <span class="timeline-date">
-                                <i class="fas fa-calendar-alt"></i> Nov 2025 - Dec 2025
-                            </span>
-                        </div>
-                        <p class="timeline-location">
-                            <i class="fas fa-map-marker-alt"></i> Delhi, India · On-site
-                        </p>
-                        <ul class="timeline-details">
-                            <li>Managed end-to-end digital marketing operations for a travel and hospitality brand</li>
-                            <li>Executed online media management strategies to increase brand visibility and customer acquisition</li>
-                            <li>Coordinated digital marketing campaigns across Facebook, Google, and social platforms</li>
-                            <li>Monitored and reported on campaign performance metrics to optimize marketing ROI</li>
-                        </ul>
-                        <div class="timeline-tags">
-                            <span>Digital Marketing</span>
-                            <span>Media Management</span>
-                            <span>Campaign Optimization</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-animate>
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <h3 class="timeline-role">Digital Marketing Intern</h3>
-                                <p class="timeline-company">
-                                    <i class="fas fa-building"></i> Online Strikers
-                                </p>
-                            </div>
-                            <span class="timeline-date">
-                                <i class="fas fa-calendar-alt"></i> Mar 2025 - Dec 2025
-                            </span>
-                        </div>
-                        <p class="timeline-location">
-                            <i class="fas fa-map-marker-alt"></i> On-site
-                        </p>
-                        <ul class="timeline-details">
-                            <li>Managed digital marketing activities across <strong>multiple client projects</strong> simultaneously</li>
-                            <li>Created reels, creatives, captions, and AI-assisted content assets for social campaigns</li>
-                            <li>Supported <strong>Meta Ads campaign execution</strong> including audience targeting, budgets, and tracking</li>
-                            <li>Tracked engagement metrics (reach, CTR, conversions) and optimized content with data insights</li>
-                            <li>Developed content strategy and audience engagement initiatives improving campaign results</li>
-                        </ul>
-                        <div class="timeline-tags">
-                            <span>Meta Ads</span>
-                            <span>Content Creation</span>
-                            <span>Client Projects</span>
-                            <span>Analytics</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <!-- EXPERIENCE -->
+    <section class="section wrap" id="experience" aria-labelledby="experience-title">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">04 / Experience</span>
+          <h2 id="experience-title">Learning. Building. <em>Growing.</em></h2>
         </div>
+        <p>Hands-on experience across personal branding, client work, and campaigns.</p>
+      </div>
+
+      <div class="timeline">
+        <article class="job reveal">
+          <div class="job-inner panel">
+            <div class="job-head">
+              <div>
+                <h3>Founder & AI Content Creator</h3>
+                <span class="company">Okkaustav · Personal Brand</span>
+              </div>
+              <div class="job-meta">
+                <span>Apr 2026 – Jun 2026</span>
+                <span>Delhi, India · Remote</span>
+              </div>
+            </div>
+            <ul>
+              <li>Built and scaled a personal brand focused on AI content, prompt engineering, and digital creativity.</li>
+              <li>Grew following to 40,000+ followers organically through strategic content and community engagement.</li>
+              <li>Generated hundreds of thousands of impressions through high-performing Reels and AI content.</li>
+              <li>Created viral AI prompts, visual content, and educational posts driving massive audience engagement.</li>
+              <li>Executed end-to-end content strategy with posting schedules and platform analytics.</li>
+              <li>Designed creatives using Canva and AI-powered design tools such as Midjourney and DALL·E.</li>
+            </ul>
+            <div class="tags">
+              <span>Content Strategy</span><span>AI Prompts</span>
+              <span>Organic Growth</span><span>Canva</span><span>Analytics</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="job reveal">
+          <div class="job-inner panel">
+            <div class="job-head">
+              <div>
+                <h3>Digital Marketing Executive</h3>
+                <span class="company">Travel Visa Holidays</span>
+              </div>
+              <div class="job-meta">
+                <span>Nov 2025 – Dec 2025</span>
+                <span>Delhi, India · On-site</span>
+              </div>
+            </div>
+            <ul>
+              <li>Managed end-to-end digital marketing operations for a travel and hospitality brand.</li>
+              <li>Executed online media management strategies to increase brand visibility and customer acquisition.</li>
+              <li>Coordinated digital marketing campaigns across Facebook, Google, and social platforms.</li>
+              <li>Monitored and reported on campaign performance metrics to optimize marketing ROI.</li>
+            </ul>
+            <div class="tags">
+              <span>Digital Marketing</span><span>Media Management</span>
+              <span>Campaign Optimization</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="job reveal">
+          <div class="job-inner panel">
+            <div class="job-head">
+              <div>
+                <h3>Digital Marketing Intern</h3>
+                <span class="company">Online Strikers</span>
+              </div>
+              <div class="job-meta">
+                <span>Mar 2025 – Dec 2025</span>
+                <span>On-site</span>
+              </div>
+            </div>
+            <ul>
+              <li>Managed digital marketing activities across multiple client projects simultaneously.</li>
+              <li>Created Reels, creatives, captions, and AI-assisted content assets for social campaigns.</li>
+              <li>Supported Meta Ads campaign execution including audience targeting, budgets, and tracking.</li>
+              <li>Tracked engagement metrics including reach, CTR, and conversions, and optimized content using data insights.</li>
+              <li>Developed content strategy and audience engagement initiatives to improve campaign results.</li>
+            </ul>
+            <div class="tags">
+              <span>Meta Ads</span><span>Content Creation</span>
+              <span>Client Projects</span><span>Analytics</span>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- ============ CERTIFICATIONS SECTION ============ -->
-    <section class="section certifications" id="certifications">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">05.</span> Certifications
-            </h2>
-            <p class="section-subtitle">Continuously upskilling with more certifications coming soon.</p>
-            <div class="cert-grid">
-
-                <div class="cert-card" data-animate>
-                    <div class="cert-badge">Verified</div>
-                    <div class="cert-icon hubspot">
-                        <i class="fas fa-share-nodes"></i>
-                    </div>
-                    <h3>Social Media Certified</h3>
-                    <p class="cert-issuer">HubSpot Academy</p>
-                    <p class="cert-date"><i class="fas fa-calendar-check"></i> Aug 2026 · Valid until Sep 2028</p>
-                </div>
-
-                <div class="cert-card" data-animate>
-                    <div class="cert-badge">Verified</div>
-                    <div class="cert-icon google">
-                        <i class="fab fa-google"></i>
-                    </div>
-                    <h3>AI-Powered Shopping Ads</h3>
-                    <p class="cert-issuer">Google Digital Academy (Skillshop)</p>
-                    <p class="cert-date"><i class="fas fa-calendar-check"></i> Aug 2026</p>
-                </div>
-
-                <div class="cert-card" data-animate>
-                    <div class="cert-badge">Verified</div>
-                    <div class="cert-icon semrush">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>SEO Essentials</h3>
-                    <p class="cert-issuer">Semrush</p>
-                    <p class="cert-date"><i class="fas fa-calendar-check"></i> Aug 2026</p>
-                </div>
-
-                <div class="cert-card" data-animate>
-                    <div class="cert-badge">Verified</div>
-                    <div class="cert-icon ai">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Claude AI Productivity</h3>
-                    <p class="cert-issuer">HCL GUVI</p>
-                    <p class="cert-date"><i class="fas fa-calendar-check"></i> Aug 2026</p>
-                </div>
-
-                <div class="cert-card" data-animate>
-                    <div class="cert-badge">Verified</div>
-                    <div class="cert-icon didm">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Professional Diploma in Digital Marketing</h3>
-                    <p class="cert-issuer">Delhi Institute of Digital Marketing (DIDM)</p>
-                    <p class="cert-date"><i class="fas fa-calendar-check"></i> Aug 2025</p>
-                </div>
-
-                <div class="cert-card" data-animate>
-                    <div class="cert-badge">Verified</div>
-                    <div class="cert-icon design">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3>Graphic Design & Creative Content</h3>
-                    <p class="cert-issuer">Skill Shiksha</p>
-                    <p class="cert-date"><i class="fas fa-calendar-check"></i> Aug 2025</p>
-                </div>
-
-                <div class="cert-card" data-animate>
-                    <div class="cert-badge">Verified</div>
-                    <div class="cert-icon strikers">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Onboard Training in Digital Marketing</h3>
-                    <p class="cert-issuer">Online Strikers</p>
-                    <p class="cert-date"><i class="fas fa-calendar-check"></i> Oct 2025</p>
-                </div>
-
-                <!-- Placeholder for upcoming certifications -->
-                <div class="cert-card cert-coming-soon" data-animate>
-                    <div class="cert-icon upcoming">
-                        <i class="fas fa-plus"></i>
-                    </div>
-                    <h3>More Coming Soon</h3>
-                    <p class="cert-issuer">Currently pursuing additional certifications</p>
-                    <p class="cert-date"><i class="fas fa-spinner fa-spin"></i> In Progress</p>
-                </div>
-
-            </div>
+    <!-- CERTIFICATIONS -->
+    <section class="section wrap" id="certifications" aria-labelledby="cert-title">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">05 / Certifications</span>
+          <h2 id="cert-title">Always <em>upskilling.</em></h2>
         </div>
+        <p>Continuously learning, with more certifications coming soon.</p>
+      </div>
+
+      <div class="cert-grid">
+        <article class="cert panel motion-card reveal">
+          <span class="cert-symbol" aria-hidden="true">✧</span>
+          <div>
+            <h3>Social Media Certified</h3>
+            <p>HubSpot Academy</p>
+            <small>Aug 2026 · Valid until Sep 2028</small>
+          </div>
+        </article>
+
+        <article class="cert panel motion-card reveal">
+          <span class="cert-symbol" aria-hidden="true">✧</span>
+          <div>
+            <h3>AI-Powered Shopping Ads</h3>
+            <p>Google Digital Academy · Skillshop</p>
+            <small>Aug 2026</small>
+          </div>
+        </article>
+
+        <article class="cert panel motion-card reveal">
+          <span class="cert-symbol" aria-hidden="true">✧</span>
+          <div>
+            <h3>SEO Essentials</h3>
+            <p>Semrush</p>
+            <small>Aug 2026</small>
+          </div>
+        </article>
+
+        <article class="cert panel motion-card reveal">
+          <span class="cert-symbol" aria-hidden="true">✧</span>
+          <div>
+            <h3>Claude AI Productivity</h3>
+            <p>HCL GUVI</p>
+            <small>Aug 2026</small>
+          </div>
+        </article>
+
+        <article class="cert panel motion-card reveal">
+          <span class="cert-symbol" aria-hidden="true">✧</span>
+          <div>
+            <h3>Professional Diploma in Digital Marketing</h3>
+            <p>Delhi Institute of Digital Marketing · DIDM</p>
+            <small>Aug 2025</small>
+          </div>
+        </article>
+
+        <article class="cert panel motion-card reveal">
+          <span class="cert-symbol" aria-hidden="true">✧</span>
+          <div>
+            <h3>Graphic Design & Creative Content</h3>
+            <p>Skill Shiksha</p>
+            <small>Aug 2025</small>
+          </div>
+        </article>
+
+        <article class="cert panel motion-card reveal">
+          <span class="cert-symbol" aria-hidden="true">✧</span>
+          <div>
+            <h3>Onboard Training in Digital Marketing</h3>
+            <p>Online Strikers</p>
+            <small>Oct 2025</small>
+          </div>
+        </article>
+
+        <article class="cert upcoming panel reveal">
+          <span class="cert-symbol" aria-hidden="true">+</span>
+          <div>
+            <h3>More Coming Soon</h3>
+            <p>Currently pursuing additional certifications.</p>
+            <small>Learning never stops.</small>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- ============ EDUCATION SECTION ============ -->
-    <section class="section education">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">06.</span> Education
-            </h2>
-            <div class="edu-card" data-animate>
-                <div class="edu-icon">
-                    <i class="fas fa-university"></i>
-                </div>
-                <div class="edu-details">
-                    <h3>Bachelor of Business Administration (BBA)</h3>
-                    <p class="edu-school">Swami Vivekanand Subharti University (SVSU), Meerut</p>
-                    <p class="edu-field">Business Administration and Management</p>
-                    <p class="edu-year"><i class="fas fa-calendar-alt"></i> 2023 - 2026</p>
-                </div>
-            </div>
+    <!-- EDUCATION -->
+    <section class="section wrap" id="education" aria-labelledby="education-title">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">06 / Education</span>
+          <h2 id="education-title">A foundation <em>in business.</em></h2>
         </div>
+      </div>
+
+      <article class="education-card panel reveal">
+        <div>
+          <h3>Bachelor of Business Administration (BBA)</h3>
+          <p>Swami Vivekanand Subharti University (SVSU), Meerut</p>
+          <p>Business Administration and Management</p>
+        </div>
+        <span class="education-date">2023 – 2026</span>
+      </article>
     </section>
 
-    <!-- ============ CONTACT / HIRE ME SECTION ============ -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">07.</span> Let's Work Together
-            </h2>
-            <div class="contact-content">
-                <p class="contact-text">
-                    I'm actively looking for opportunities in <strong>Digital Marketing</strong>,
-                    <strong>Social Media Marketing</strong>, <strong>Meta Ads</strong>, and
-                    <strong>AI-powered Marketing</strong>. Whether you have a full-time role, a freelance
-                    project, or just want to connect, I'd love to hear from you.
-                </p>
-                <div class="contact-links">
-                    <a href="mailto:kaustavaswal1@gmail.com" class="contact-card">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <span class="contact-card-label">Email</span>
-                            <span class="contact-card-value">kaustavaswal1@gmail.com</span>
-                        </div>
-                    </a>
-                    <a href="tel:+919310261967" class="contact-card">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <span class="contact-card-label">Phone</span>
-                            <span class="contact-card-value">+91 93102 61967</span>
-                        </div>
-                    </a>
-                    <a href="https://www.linkedin.com/in/kaustavaswal/" target="_blank" class="contact-card">
-                        <i class="fab fa-linkedin-in"></i>
-                        <div>
-                            <span class="contact-card-label">LinkedIn</span>
-                            <span class="contact-card-value">linkedin.com/in/kaustavaswal</span>
-                        </div>
-                    </a>
-                    <a href="https://github.com/uyu23" target="_blank" class="contact-card">
-                        <i class="fab fa-github"></i>
-                        <div>
-                            <span class="contact-card-label">GitHub</span>
-                            <span class="contact-card-value">github.com/uyu23</span>
-                        </div>
-                    </a>
-                </div>
-                <a href="mailto:kaustavaswal1@gmail.com" class="btn btn-primary btn-large">
-                    <i class="fas fa-paper-plane"></i> Send Me a Message
-                </a>
-            </div>
+    <!-- CONTACT -->
+    <section class="section contact-section wrap" id="contact" aria-labelledby="contact-title">
+      <div class="contact-box panel reveal">
+        <span class="eyebrow">07 / Let’s Work Together</span>
+        <h2 id="contact-title">
+          Ready to grow<br><span class="accent">something great?</span>
+        </h2>
+
+        <p class="contact-copy">
+          I’m actively looking for opportunities in Digital Marketing,
+          Social Media Marketing, Meta Ads, and AI-powered Marketing.
+          Whether you have a full-time role, a freelance project, or just
+          want to connect, I’d love to hear from you.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="mailto:kaustavaswal1@gmail.com">
+            Start a Conversation <span aria-hidden="true">↗</span>
+          </a>
         </div>
+
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:kaustavaswal1@gmail.com">
+            <span>
+              <small>Email</small>
+              <strong>kaustavaswal1@gmail.com</strong>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a class="contact-link" href="tel:+919310261967">
+            <span>
+              <small>Phone</small>
+              <strong>+91 93102 61967</strong>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a
+            class="contact-link"
+            href="https://www.linkedin.com/in/kaustavaswal"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>
+              <small>LinkedIn · opens in a new tab</small>
+              <strong>linkedin.com/in/kaustavaswal</strong>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a
+            class="contact-link"
+            href="https://github.com/uyu23"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>
+              <small>GitHub · opens in a new tab</small>
+              <strong>github.com/uyu23</strong>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- ============ FOOTER ============ -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <a href="#hero" class="footer-logo">Kaustav<span class="logo-dot">.</span></a>
-                <p class="footer-tagline">Digital Marketing Executive · Delhi, India</p>
-            </div>
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/kaustavaswal/" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/uyu23" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:kaustavaswal1@gmail.com" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-            <p class="footer-copyright">© 2026 Kaustav Aswal. All rights reserved.</p>
-        </div>
-    </footer>
+  <footer class="footer wrap">
+    <p>© <span id="year">2026</span> Kaustav Aswal</p>
+    <p>Digital Marketing Executive · Delhi, India</p>
 
-    <script src="script.js"></script>
+    <button
+      class="motion-toggle"
+      id="motion-toggle"
+      type="button"
+      aria-pressed="false"
+      hidden
+    >
+      Reduce motion
+    </button>
+
+    <a href="#home">Back to top ↑</a>
+  </footer>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const motionPreference = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      );
+      const toggle = document.getElementById("motion-toggle");
+      const progress = document.querySelector(".progress");
+
+      let savedPreference = null;
+      try {
+        savedPreference = localStorage.getItem("kaustav-reduce-motion");
+      } catch {
+        // The site still works if browser storage is unavailable.
+      }
+
+      let manualReduction = savedPreference === "true";
+      let observer;
+
+      const motionIsReduced = () =>
+        motionPreference.matches || manualReduction;
+
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+      function revealEverything() {
+        document.querySelectorAll(".reveal.pending").forEach((element) => {
+          element.classList.remove("pending");
+        });
+        if (observer) observer.disconnect();
+      }
+
+      function updateMotion() {
+        root.classList.toggle("motion-off", motionIsReduced());
+        toggle.setAttribute("aria-pressed", String(motionIsReduced()));
+
+        if (motionPreference.matches) {
+          toggle.textContent = "Reduced motion: system setting";
+          toggle.disabled = true;
+        } else {
+          toggle.disabled = false;
+          toggle.textContent = manualReduction
+            ? "Enable motion"
+            : "Reduce motion";
+        }
+
+        if (motionIsReduced()) revealEverything();
+      }
+
+      toggle.hidden = false;
+      updateMotion();
+
+      toggle.addEventListener("click", () => {
+        manualReduction = !manualReduction;
+        try {
+          localStorage.setItem(
+            "kaustav-reduce-motion",
+            String(manualReduction)
+          );
+        } catch {}
+        updateMotion();
+      });
+
+      motionPreference.addEventListener("change", updateMotion);
+
+      // Progressive enhancement: all content is visible without JavaScript.
+      if ("IntersectionObserver" in window && !motionIsReduced()) {
+        observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove("pending");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.06,
+          rootMargin: "0px 0px -15px 0px"
+        });
+
+        document.querySelectorAll(
+          ".services-grid, .skills-grid, .cert-grid"
+        ).forEach((grid) => {
+          Array.from(grid.children).forEach((card, index) => {
+            card.style.setProperty("--delay", `${(index % 3) * 65}ms`);
+          });
+        });
+
+        document.querySelectorAll(".reveal").forEach((element) => {
+          element.classList.add("pending");
+          observer.observe(element);
+        });
+      }
+
+      // Reading progress; requestAnimationFrame limits scroll work.
+      let scrollScheduled = false;
+
+      function updateProgress() {
+        const scrollable =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
+        progress.style.transform =
+          `scaleX(${Math.min(1, Math.max(0, ratio))})`;
+        scrollScheduled = false;
+      }
+
+      window.addEventListener("scroll", () => {
+        if (!scrollScheduled) {
+          scrollScheduled = true;
+          requestAnimationFrame(updateProgress);
+        }
+      }, { passive: true });
+
+      window.addEventListener("resize", updateProgress);
+      updateProgress();
+
+      // Subtle card spotlight for mouse/trackpad users.
+      if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        document.querySelectorAll(".motion-card").forEach((card) => {
+          card.addEventListener("pointermove", (event) => {
+            if (motionIsReduced()) return;
+            const bounds = card.getBoundingClientRect();
+            card.style.setProperty("--mx", `${event.clientX - bounds.left}px`);
+            card.style.setProperty("--my", `${event.clientY - bounds.top}px`);
+          });
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
