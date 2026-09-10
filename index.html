@@ -3,914 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c0e12">
   <meta
     name="description"
-    content="Kaustav Aswal — Digital Marketing Executive based in Delhi. Social media marketing, Meta Ads, SEO, creative content, and AI-powered marketing."
+    content="Kaustav Aswal — Digital Marketing Executive in Delhi. Social media marketing, Meta Ads, SEO, creative content, and AI-powered marketing."
   >
-  <meta name="theme-color" content="#0c0e12">
   <title>Kaustav Aswal | Digital Marketing & AI</title>
-
-  <style>
-    /* =========================
-       THEME
-    ========================== */
-    :root {
-      --bg: #0c0e12;
-      --surface: #13161c;
-      --text: #f1f3eb;
-      --muted: #a4abb7;
-      --accent: #c3f56b;
-      --purple: #b7a4ff;
-      --line: rgba(255,255,255,.11);
-      --radius: 22px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 100px;
-    }
-
-    body {
-      margin: 0;
-      color: var(--text);
-      background: var(--bg);
-      font-family: "Segoe UI", Arial, sans-serif;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1, h2, h3 { line-height: 1.15; }
-    ::selection { color: var(--bg); background: var(--accent); }
-
-    a:focus-visible, button:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: 5px;
-    }
-
-    .wrap {
-      width: min(1180px, calc(100% - 48px));
-      margin-inline: auto;
-    }
-
-    .muted { color: var(--muted); }
-    .accent { color: var(--accent); }
-
-    .skip {
-      position: fixed;
-      top: -100px;
-      left: 16px;
-      z-index: 100;
-      background: var(--accent);
-      color: var(--bg);
-      padding: 12px 18px;
-      border-radius: 8px;
-    }
-
-    .skip:focus { top: 12px; }
-
-    .progress {
-      position: fixed;
-      inset: 0 0 auto;
-      height: 3px;
-      z-index: 60;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      pointer-events: none;
-    }
-
-    /* =========================
-       NAVIGATION
-    ========================== */
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      border-bottom: 1px solid var(--line);
-      background: rgba(12,14,18,.9);
-      backdrop-filter: blur(18px);
-    }
-
-    .nav {
-      min-height: 80px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .logo {
-      flex-shrink: 0;
-      font-size: 1.35rem;
-      font-weight: 850;
-      letter-spacing: -.06em;
-    }
-
-    .logo span { color: var(--accent); }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .nav-links a {
-      font-size: .85rem;
-      color: var(--muted);
-      white-space: nowrap;
-      transition: color .2s;
-    }
-
-    .nav-links a:hover { color: var(--accent); }
-
-    .nav-links .nav-cta {
-      padding: 9px 17px;
-      border: 1px solid var(--line);
-      border-radius: 99px;
-      color: var(--text);
-    }
-
-    /* =========================
-       HERO
-    ========================== */
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 95px 0 65px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 640px;
-      height: 640px;
-      top: -210px;
-      right: -310px;
-      background: radial-gradient(circle, #c3f56b12, transparent 68%);
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      align-items: center;
-      gap: 42px;
-    }
-
-    .availability {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 7px 13px;
-      border: 1px solid #c3f56b30;
-      border-radius: 99px;
-      background: #c3f56b09;
-      color: var(--accent);
-      font-size: .76rem;
-      font-weight: 650;
-    }
-
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 15px #c3f56b77;
-    }
-
-    .hello {
-      margin: 30px 0 10px;
-      font-size: 1.02rem;
-      color: var(--muted);
-    }
-
-    h1 {
-      margin-bottom: 23px;
-      font-size: clamp(3.4rem, 7.2vw, 6.5rem);
-      font-weight: 850;
-      line-height: .97;
-      letter-spacing: -.075em;
-    }
-
-    h1 span { display: block; color: var(--accent); }
-
-    .hero-role {
-      font-size: .77rem;
-      font-weight: 650;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-      color: var(--purple);
-    }
-
-    .hero-description {
-      max-width: 560px;
-      margin-block: 20px 0;
-      font-size: 1.03rem;
-      color: var(--muted);
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      padding: 13px 22px;
-      border: 1px solid var(--line);
-      border-radius: 99px;
-      font-size: .87rem;
-      font-weight: 700;
-      transition: transform .25s, background .25s, box-shadow .25s;
-    }
-
-    .btn:hover {
-      transform: translateY(-4px);
-      background: #20252d;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: var(--bg);
-    }
-
-    .btn-primary:hover {
-      background: #d0ff85;
-      box-shadow: 0 10px 35px #c3f56b20;
-    }
-
-    .hero-email {
-      display: inline-block;
-      margin-top: 23px;
-      font-size: .84rem;
-      color: var(--muted);
-      overflow-wrap: anywhere;
-    }
-
-    .hero-email:hover { color: var(--accent); }
-
-    /* Decorative brand illustration — not an analytics chart. */
-    .hero-visual {
-      position: relative;
-      height: 440px;
-      display: grid;
-      place-items: center;
-      isolation: isolate;
-    }
-
-    .visual-grid {
-      position: absolute;
-      inset: 15px;
-      z-index: -1;
-      background-image:
-        linear-gradient(var(--line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--line) 1px, transparent 1px);
-      background-size: 36px 36px;
-      opacity: .25;
-      border-radius: 50%;
-      mask-image: radial-gradient(circle, black 25%, transparent 70%);
-    }
-
-    .orbit {
-      position: absolute;
-      width: 350px;
-      height: 350px;
-      border: 1px solid #c3f56b30;
-      border-radius: 50%;
-      animation: spin 26s linear infinite;
-    }
-
-    .orbit::before {
-      content: "";
-      position: absolute;
-      top: 42px;
-      left: 42px;
-      width: 13px;
-      height: 13px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 22px #c3f56b55;
-    }
-
-    .orbit.second {
-      width: 260px;
-      height: 260px;
-      border-style: dashed;
-      border-color: #b7a4ff40;
-      animation-direction: reverse;
-      animation-duration: 35s;
-    }
-
-    .orbit.second::before {
-      top: 30px;
-      left: 30px;
-      background: var(--purple);
-      width: 10px;
-      height: 10px;
-    }
-
-    .monogram {
-      width: 174px;
-      height: 174px;
-      border-radius: 40px;
-      display: grid;
-      place-items: center;
-      font-size: 4.7rem;
-      font-weight: 900;
-      letter-spacing: -.12em;
-      padding-right: 9px;
-      color: var(--accent);
-      border: 1px solid #c3f56b45;
-      background: linear-gradient(145deg, #272e20, #12161a);
-      box-shadow: 0 25px 70px #0005, inset 0 1px 0 #ffffff15;
-      transform: rotate(-8deg);
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .floating-label {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 13px 17px;
-      background: rgba(22,26,33,.95);
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      box-shadow: 0 15px 30px #0003;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .floating-label strong {
-      display: block;
-      font-size: 1.15rem;
-      line-height: 1.25;
-    }
-
-    .floating-label small { color: var(--muted); font-size: .68rem; }
-    .floating-label .symbol { font-size: 1.5rem; color: var(--accent); }
-    .label-one { left: 0; top: 60px; }
-    .label-two { right: 0; bottom: 70px; animation-delay: -3s; }
-    .label-two .symbol { color: var(--purple); }
-
-    .visual-caption {
-      position: absolute;
-      bottom: 8px;
-      color: var(--muted);
-      font-size: .65rem;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-    }
-
-    .hero-copy > * { animation: enter .85s both; }
-    .hero-copy h1 { animation-delay: .1s; }
-    .hero-copy .hero-description { animation-delay: .2s; }
-    .hero-copy .buttons { animation-delay: .3s; }
-
-    /* =========================
-       SCROLLING STRIP
-    ========================== */
-    .ticker {
-      overflow: hidden;
-      padding: 19px 0;
-      border-block: 1px solid var(--line);
-      background: #111419;
-    }
-
-    .ticker-track {
-      display: flex;
-      width: max-content;
-      animation: marquee 32s linear infinite;
-    }
-
-    .ticker-group {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      padding-right: 32px;
-    }
-
-    .ticker span {
-      color: var(--muted);
-      font-size: .78rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .ticker b { color: var(--accent); font-weight: 400; }
-
-    /* =========================
-       SHARED SECTIONS
-    ========================== */
-    .section { padding-block: 95px; }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 35px;
-      margin-bottom: 34px;
-    }
-
-    .section-head > p {
-      max-width: 330px;
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: .93rem;
-    }
-
-    .eyebrow {
-      display: block;
-      margin-bottom: 13px;
-      font-size: .7rem;
-      font-weight: 650;
-      text-transform: uppercase;
-      letter-spacing: .2em;
-      color: var(--accent);
-    }
-
-    h2 {
-      margin-bottom: 0;
-      font-size: clamp(2rem, 4.5vw, 3.3rem);
-      letter-spacing: -.055em;
-    }
-
-    h2 em { color: var(--muted); font-style: normal; }
-
-    .panel {
-      border: 1px solid var(--line);
-      background: var(--surface);
-      border-radius: var(--radius);
-    }
-
-    .motion-card {
-      position: relative;
-      overflow: hidden;
-      transition: transform .3s, border-color .3s, box-shadow .3s;
-    }
-
-    .motion-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        350px circle at var(--mx, 50%) var(--my, 50%),
-        #c3f56b0d,
-        transparent 65%
-      );
-      opacity: 0;
-      transition: opacity .3s;
-      pointer-events: none;
-    }
-
-    .motion-card:hover {
-      transform: translateY(-5px);
-      border-color: #c3f56b40;
-      box-shadow: 0 18px 40px #0002;
-    }
-
-    .motion-card:hover::before { opacity: 1; }
-
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-
-    .tags span {
-      padding: 5px 10px;
-      border: 1px solid var(--line);
-      border-radius: 7px;
-      color: var(--muted);
-      font-size: .72rem;
-    }
-
-    /* =========================
-       ABOUT
-    ========================== */
-    .about-grid {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 65px;
-    }
-
-    .about-heading h2 { max-width: 400px; }
-
-    .location {
-      display: inline-flex;
-      gap: 9px;
-      align-items: center;
-      margin-top: 25px;
-      color: var(--muted);
-      font-size: .85rem;
-    }
-
-    .location span { color: var(--accent); }
-
-    .about-copy p { color: var(--muted); margin-bottom: 19px; }
-    .about-copy strong { color: var(--text); font-weight: 650; }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      margin-top: 42px;
-      overflow: hidden;
-    }
-
-    .stat { padding: 29px 20px; text-align: center; }
-    .stat + .stat { border-left: 1px solid var(--line); }
-
-    .stat strong {
-      display: block;
-      color: var(--accent);
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.2;
-      letter-spacing: -.055em;
-    }
-
-    .stat span { display: block; margin-top: 7px; font-size: .78rem; color: var(--muted); }
-
-    /* =========================
-       SERVICES
-    ========================== */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .service { padding: 28px; }
-
-    .service-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 30px;
-    }
-
-    .service-icon {
-      display: grid;
-      place-items: center;
-      width: 44px;
-      height: 44px;
-      color: var(--accent);
-      background: #c3f56b0b;
-      border: 1px solid #c3f56b20;
-      border-radius: 12px;
-      font-size: 1.35rem;
-    }
-
-    .service-number { font-size: .7rem; color: var(--muted); }
-    .service h3 { margin-bottom: 13px; font-size: 1.1rem; letter-spacing: -.025em; }
-    .service p { margin: 0; font-size: .87rem; color: var(--muted); }
-
-    /* =========================
-       SKILLS
-    ========================== */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 18px;
-    }
-
-    .skill-card { grid-column: span 2; padding: 25px; }
-    .skill-card:nth-last-child(-n+2) { grid-column: span 3; }
-    .skill-card h3 { font-size: 1rem; margin-bottom: 19px; }
-
-    .skill-card .tags span {
-      background: #ffffff03;
-      padding: 7px 11px;
-      transition: color .2s, border-color .2s;
-    }
-
-    .skill-card .tags span:hover { color: var(--accent); border-color: #c3f56b55; }
-
-    /* =========================
-       EXPERIENCE
-    ========================== */
-    .timeline { position: relative; padding-left: 30px; }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      left: 5px;
-      top: 10px;
-      bottom: 35px;
-      width: 1px;
-      background: linear-gradient(var(--accent), var(--line));
-    }
-
-    .job { position: relative; margin-bottom: 24px; }
-
-    .job::before {
-      content: "";
-      position: absolute;
-      top: 30px;
-      left: -30px;
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      border: 2px solid var(--accent);
-      background: var(--bg);
-      box-shadow: 0 0 0 5px var(--bg);
-    }
-
-    .job-inner { padding: 30px; }
-
-    .job-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .job h3 { font-size: 1.25rem; margin-bottom: 8px; letter-spacing: -.03em; }
-    .company { color: var(--accent); font-size: .91rem; }
-    .job-meta { text-align: right; font-size: .78rem; color: var(--muted); flex-shrink: 0; }
-    .job-meta span { display: block; }
-
-    .job ul { padding-left: 19px; margin-block: 24px; }
-    .job li { padding-left: 4px; margin-bottom: 9px; font-size: .9rem; color: var(--muted); }
-    .job li::marker { color: var(--accent); }
-
-    /* =========================
-       CERTIFICATIONS
-    ========================== */
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .cert {
-      display: flex;
-      gap: 17px;
-      padding: 23px;
-      align-items: flex-start;
-    }
-
-    .cert-symbol {
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      width: 37px;
-      height: 37px;
-      border-radius: 10px;
-      background: #b7a4ff10;
-      color: var(--purple);
-      font-size: 1.05rem;
-    }
-
-    .cert h3 { font-size: .98rem; margin-bottom: 7px; }
-    .cert p { color: var(--muted); margin-bottom: 5px; font-size: .83rem; }
-    .cert small { color: var(--accent); font-size: .72rem; }
-    .cert.upcoming { border-style: dashed; background: transparent; }
-
-    /* =========================
-       EDUCATION
-    ========================== */
-    .education-card {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-      padding: 35px;
-    }
-
-    .education-card h3 {
-      font-size: clamp(1.15rem, 2.5vw, 1.55rem);
-      margin-bottom: 12px;
-      letter-spacing: -.03em;
-    }
-
-    .education-card p { color: var(--muted); margin-bottom: 5px; font-size: .92rem; }
-
-    .education-date {
-      white-space: nowrap;
-      padding: 10px 18px;
-      border: 1px solid #c3f56b35;
-      border-radius: 99px;
-      color: var(--accent);
-      font-size: .85rem;
-    }
-
-    /* =========================
-       CONTACT & FOOTER
-    ========================== */
-    .contact-section { padding-top: 55px; }
-
-    .contact-box {
-      position: relative;
-      overflow: hidden;
-      padding: clamp(28px, 6vw, 65px);
-      background:
-        radial-gradient(ellipse at top right, #c3f56b0f, transparent 65%),
-        var(--surface);
-    }
-
-    .contact-box h2 { max-width: 750px; font-size: clamp(2.5rem, 6vw, 4.6rem); }
-
-    .contact-copy { max-width: 670px; color: var(--muted); margin-top: 23px; }
-
-    .contact-links {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 35px;
-    }
-
-    .contact-link {
-      min-width: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      border: 1px solid var(--line);
-      background: #0c0e1255;
-      border-radius: 13px;
-      padding: 18px 20px;
-      transition: border-color .25s, background .25s;
-    }
-
-    .contact-link:hover { border-color: #c3f56b55; background: #c3f56b06; }
-    .contact-link small { display: block; color: var(--muted); font-size: .69rem; margin-bottom: 3px; }
-    .contact-link strong { font-size: .88rem; font-weight: 600; overflow-wrap: anywhere; }
-    .contact-link > span:last-child { color: var(--accent); font-size: 1.25rem; }
-
-    .footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-      padding-block: 28px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: .76rem;
-    }
-
-    .footer p { margin: 0; }
-
-    .motion-toggle {
-      background: transparent;
-      border: 1px solid var(--line);
-      border-radius: 99px;
-      padding: 7px 12px;
-      color: var(--muted);
-      cursor: pointer;
-      font-size: .72rem;
-    }
-
-    .motion-toggle:hover { color: var(--text); }
-
-    /* =========================
-       ANIMATIONS
-    ========================== */
-    .reveal {
-      transition: opacity .7s ease, transform .7s ease;
-      transition-delay: var(--delay, 0ms);
-    }
-
-    .reveal.pending { opacity: 0; transform: translateY(25px); }
-
-    @keyframes enter {
-      from { opacity: 0; transform: translateY(22px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes float {
-      0%, 100% { translate: 0 0; }
-      50% { translate: 0 -13px; }
-    }
-
-    @keyframes spin { to { transform: rotate(360deg); } }
-    @keyframes marquee { to { transform: translateX(-50%); } }
-
-    /* Manual motion control. */
-    html.motion-off { scroll-behavior: auto; }
-
-    html.motion-off *,
-    html.motion-off *::before,
-    html.motion-off *::after {
-      animation: none !important;
-      transition: none !important;
-    }
-
-    html.motion-off .reveal.pending { opacity: 1; transform: none; }
-    html.motion-off .motion-card:hover,
-    html.motion-off .btn:hover { transform: none; }
-
-    /* =========================
-       RESPONSIVE
-    ========================== */
-    @media (max-width: 1000px) {
-      .nav-links { gap: 17px; }
-      .hero-grid { gap: 15px; }
-      .hero-visual { height: 390px; }
-      .orbit { width: 290px; height: 290px; }
-      .orbit::before { top: 34px; left: 34px; }
-      .orbit.second { width: 225px; height: 225px; }
-      .orbit.second::before { top: 26px; left: 26px; }
-      .monogram { width: 145px; height: 145px; font-size: 4rem; }
-      .floating-label { padding: 10px 12px; }
-      .floating-label strong { font-size: 1rem; }
-      .label-one { top: 40px; }
-      .label-two { bottom: 55px; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .about-grid { gap: 35px; }
-    }
-
-    @media (max-width: 760px) {
-      html { scroll-padding-top: 130px; }
-      .wrap { width: min(1180px, calc(100% - 32px)); }
-
-      .nav {
-        min-height: auto;
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 10px;
-        padding-block: 12px;
-      }
-
-      .nav-links {
-        width: 100%;
-        overflow-x: auto;
-        gap: 22px;
-        padding: 3px 5px 8px;
-        scrollbar-width: thin;
-      }
-
-      .nav-links a { font-size: .76rem; }
-      .nav-links .nav-cta { padding: 0; border: 0; color: var(--accent); }
-
-      .hero { padding-top: 55px; padding-bottom: 35px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
-      h1 { font-size: clamp(3.8rem, 13vw, 6rem); }
-      .hero-visual { width: min(420px, 100%); margin-inline: auto; height: 350px; }
-      .label-one { left: 8px; top: 25px; }
-      .label-two { right: 8px; bottom: 40px; }
-
-      .section { padding-block: 65px; }
-      .section-head { flex-direction: column; align-items: flex-start; gap: 18px; }
-      .section-head > p { max-width: 100%; }
-      .about-grid { grid-template-columns: 1fr; gap: 25px; }
-
-      .stats { grid-template-columns: repeat(2, 1fr); }
-      .stat:nth-child(3) { border-left: 0; }
-      .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
-
-      .skills-grid { grid-template-columns: repeat(2, 1fr); }
-      .skill-card, .skill-card:nth-last-child(-n+2) { grid-column: span 1; }
-      .skill-card:last-child { grid-column: 1 / -1; }
-
-      .job-head { flex-direction: column; gap: 13px; }
-      .job-meta { text-align: left; }
-      .job-inner { padding: 23px; }
-      .cert-grid { grid-template-columns: 1fr; }
-      .education-card { align-items: flex-start; flex-direction: column; padding: 27px; }
-      .contact-links { grid-template-columns: 1fr; }
-      .footer { flex-wrap: wrap; }
-    }
-
-    @media (max-width: 480px) {
-      .services-grid, .skills-grid { grid-template-columns: 1fr; }
-      .skill-card:last-child { grid-column: auto; }
-      .service { padding: 25px; }
-      .hero-role { font-size: .66rem; letter-spacing: .08em; }
-      .availability { font-size: .69rem; }
-      .timeline { padding-left: 23px; }
-      .job::before { left: -23px; }
-      .job-inner { padding: 20px; }
-      .contact-link { padding: 15px; }
-      .contact-link strong { font-size: .8rem; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-
-      *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-      }
-
-      .reveal.pending { opacity: 1; transform: none; }
-      .motion-card:hover, .btn:hover { transform: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
 </head>
 
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <div class="progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="reading-progress" aria-hidden="true"></div>
 
-  <header class="header">
-    <nav class="nav wrap" aria-label="Main navigation">
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
       <a class="logo" href="#home" aria-label="Kaustav Aswal — home">
         kaustav<span>.</span>
       </a>
@@ -921,15 +29,15 @@
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#certifications">Certifications</a>
-        <a class="nav-cta" href="#contact">Let’s talk ↗</a>
+        <a href="#contact" class="nav-cta">Let’s talk ↗</a>
       </div>
     </nav>
   </header>
 
   <main id="main">
-    <!-- HERO -->
+    <!-- ================= HERO ================= -->
     <section class="hero" id="home" aria-labelledby="hero-title">
-      <div class="wrap hero-grid">
+      <div class="container hero-grid">
         <div class="hero-copy">
           <div class="availability">
             <span class="status-dot" aria-hidden="true"></span>
@@ -938,7 +46,10 @@
 
           <p class="hello">Hello, I’m</p>
 
-          <h1 id="hero-title">Kaustav <span>Aswal.</span></h1>
+          <h1 id="hero-title">
+            Kaustav
+            <span>Aswal.</span>
+          </h1>
 
           <p class="hero-role">
             Digital Marketing Executive · Delhi, India
@@ -947,19 +58,19 @@
           <p class="hero-description">
             I help brands grow through creative content, data-driven
             marketing strategies, and AI-powered solutions to
-            <strong class="accent">turn followers into customers.</strong>
+            <strong>turn followers into customers.</strong>
           </p>
 
-          <div class="buttons">
+          <div class="button-group">
             <a
-              class="btn btn-primary"
+              class="button button-primary magnetic"
               href="mailto:kaustavaswal1@gmail.com?subject=Work%20opportunity"
             >
               Hire Me <span aria-hidden="true">↗</span>
             </a>
 
-            <!-- Upload your actual résumé as resume.pdf beside index.html. -->
-            <a class="btn" href="./resume.pdf" download>
+            <!-- Add your actual PDF alongside these files. -->
+            <a class="button magnetic" href="./resume.pdf" download>
               Download Resume <span aria-hidden="true">↓</span>
             </a>
           </div>
@@ -969,34 +80,121 @@
           </a>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <div class="visual-grid"></div>
-          <div class="orbit"></div>
-          <div class="orbit second"></div>
-          <div class="monogram">KA</div>
+        <!-- Decorative motion graphics, not an analytics dashboard. -->
+        <div class="motion-stage" aria-hidden="true">
+          <div class="stage-glow"></div>
+          <div class="stage-grid"></div>
 
-          <div class="floating-label label-one">
-            <span class="symbol">↗</span>
+          <svg class="network-lines" viewBox="0 0 440 440" fill="none">
+            <defs>
+              <linearGradient
+                id="connection-gradient"
+                x1="0" y1="0" x2="440" y2="440"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#c3f56b"/>
+                <stop offset="1" stop-color="#b7a4ff"/>
+              </linearGradient>
+            </defs>
+
+            <path
+              class="network-base"
+              d="M95 105H160Q180 105 180 125V180
+                 M345 115H290Q270 115 270 135V180
+                 M90 315H155Q180 315 180 290V260
+                 M345 320H290Q260 320 260 290V260"
+            />
+
+            <path
+              class="network-flow"
+              d="M95 105H160Q180 105 180 125V180
+                 M345 115H290Q270 115 270 135V180
+                 M90 315H155Q180 315 180 290V260
+                 M345 320H290Q260 320 260 290V260"
+            />
+          </svg>
+
+          <div class="engine-ring ring-a"></div>
+          <div class="engine-ring ring-b"></div>
+          <div class="engine-ring ring-c"></div>
+
+          <div class="engine-core">
+            <div class="core-shine"></div>
+            <span>KA</span>
+            <small>CREATIVE ENGINE</small>
+          </div>
+
+          <div class="mini-card content-card">
+            <div class="mini-heading">
+              <span class="mini-icon">▤</span>
+              CONTENT
+              <span class="mini-light"></span>
+            </div>
+
+            <div class="content-preview">
+              <div class="preview-sun"></div>
+              <div class="preview-landscape"></div>
+              <div class="preview-spark">✦</div>
+            </div>
+
+            <div class="skeleton-line long"></div>
+            <div class="skeleton-line short"></div>
+          </div>
+
+          <div class="mini-card growth-card">
+            <div class="mini-heading">
+              <span class="mini-icon">↗</span>
+              GROWTH
+            </div>
+
+            <div class="motion-bars">
+              <i style="--bar:28%;--i:0"></i>
+              <i style="--bar:48%;--i:1"></i>
+              <i style="--bar:38%;--i:2"></i>
+              <i style="--bar:67%;--i:3"></i>
+              <i style="--bar:57%;--i:4"></i>
+              <i style="--bar:88%;--i:5"></i>
+              <i style="--bar:100%;--i:6"></i>
+            </div>
+
+            <div class="mini-footer">Strategy meets creativity</div>
+          </div>
+
+          <div class="mini-card ai-card">
+            <span class="ai-star">✦</span>
+            <div>
+              <strong>AI-powered</strong>
+              <div class="waveform">
+                <i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i><i></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="audience-pill">
+            <span class="audience-symbol">◎</span>
             <div>
               <strong>40K+</strong>
               <small>Organic followers</small>
             </div>
           </div>
 
-          <div class="floating-label label-two">
-            <span class="symbol">✦</span>
-            <div>
-              <strong>AI × Creativity</strong>
-              <small>Built for brand growth</small>
-            </div>
-          </div>
-
-          <span class="visual-caption">Create. Connect. Convert.</span>
+          <span class="stage-caption">
+            IDEAS <b>→</b> CONTENT <b>→</b> CONNECTION
+          </span>
         </div>
+      </div>
+
+      <div class="container hero-bottom">
+        <a class="scroll-cue" href="#about">
+          <span class="scroll-mouse" aria-hidden="true"><i></i></span>
+          Scroll to explore
+        </a>
+        <span>Creativity × Data × AI</span>
       </div>
     </section>
 
-    <!-- Decorative strip; skills are listed accessibly below. -->
+    <!-- Decorative; skills are listed accessibly below. -->
     <div class="ticker" aria-hidden="true">
       <div class="ticker-track">
         <div class="ticker-group">
@@ -1018,24 +216,27 @@
       </div>
     </div>
 
-    <!-- ABOUT -->
-    <section class="section wrap" id="about" aria-labelledby="about-title">
+    <!-- ================= ABOUT ================= -->
+    <section class="section container" id="about" aria-labelledby="about-title">
       <div class="about-grid">
         <div class="about-heading reveal">
           <span class="eyebrow">01 / About Me</span>
           <h2 id="about-title">
-            Creativity meets<br><em>data & strategy.</em>
+            Creativity meets<br>
+            <em>data & strategy.</em>
           </h2>
-          <p class="location"><span aria-hidden="true">⌖</span> Based in Delhi, India</p>
+          <p class="location">
+            <span aria-hidden="true">⌖</span> Based in Delhi, India
+          </p>
         </div>
 
         <div class="about-copy reveal">
           <p>
-            I am a <strong>Digital Marketing Executive</strong> with hands-on
-            experience in Social Media Marketing, Meta Ads, WordPress, and
-            AI Prompt Engineering. I help businesses build their online
-            presence through creative content, effective marketing strategies,
-            and AI-powered solutions.
+            I am a <strong>Digital Marketing Executive</strong> with
+            hands-on experience in Social Media Marketing, Meta Ads,
+            WordPress, and AI Prompt Engineering. I help businesses
+            build their online presence through creative content,
+            effective marketing strategies, and AI-powered solutions.
           </p>
           <p>
             With a proven track record of growing
@@ -1053,16 +254,28 @@
       </div>
 
       <div class="stats panel reveal">
-        <div class="stat"><strong>40K+</strong><span>Organic Followers</span></div>
-        <div class="stat"><strong>7+</strong><span>Certifications</span></div>
-        <div class="stat"><strong>1+</strong><span>Year Experience</span></div>
-        <div class="stat"><strong>5+</strong><span>Client Projects</span></div>
+        <div class="stat">
+          <strong data-count="40" data-suffix="K+">40K+</strong>
+          <span>Organic Followers</span>
+        </div>
+        <div class="stat">
+          <strong data-count="7" data-suffix="+">7+</strong>
+          <span>Certifications</span>
+        </div>
+        <div class="stat">
+          <strong data-count="1" data-suffix="+">1+</strong>
+          <span>Year Experience</span>
+        </div>
+        <div class="stat">
+          <strong data-count="5" data-suffix="+">5+</strong>
+          <span>Client Projects</span>
+        </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section class="section wrap" id="services" aria-labelledby="services-title">
-      <div class="section-head reveal">
+    <!-- ================= SERVICES ================= -->
+    <section class="section container" id="services" aria-labelledby="services-title">
+      <div class="section-heading reveal">
         <div>
           <span class="eyebrow">02 / What I Do</span>
           <h2 id="services-title">Your brand. <em>Next level.</em></h2>
@@ -1072,7 +285,7 @@
         </p>
       </div>
 
-      <div class="services-grid">
+      <div class="services-grid stagger-grid">
         <article class="service panel motion-card reveal">
           <div class="service-top">
             <span class="service-icon" aria-hidden="true">↗</span>
@@ -1104,8 +317,8 @@
           </div>
           <h3>SEO & Content Strategy</h3>
           <p>
-            Keyword research, on-page SEO, content calendars, blog management,
-            and organic visibility improvement.
+            Keyword research, on-page SEO, content calendars, blog
+            management, and organic visibility improvement.
           </p>
         </article>
 
@@ -1116,8 +329,8 @@
           </div>
           <h3>AI-Powered Marketing</h3>
           <p>
-            Leveraging ChatGPT, Claude AI, Midjourney, and DALL·E for content
-            creation, prompt engineering, and marketing automation.
+            Leveraging ChatGPT, Claude AI, Midjourney, and DALL·E for
+            content creation, prompt engineering, and marketing automation.
           </p>
         </article>
 
@@ -1128,8 +341,8 @@
           </div>
           <h3>WordPress Management</h3>
           <p>
-            Website setup, maintenance, plugin management, landing pages,
-            and blog publishing for business websites.
+            Website setup, maintenance, plugin management, landing
+            pages, and blog publishing for business websites.
           </p>
         </article>
 
@@ -1140,84 +353,103 @@
           </div>
           <h3>Creative Design</h3>
           <p>
-            Eye-catching social media creatives, Reels, carousels, banners,
-            and brand assets designed using Canva and AI tools.
+            Eye-catching social media creatives, Reels, carousels,
+            banners, and brand assets designed using Canva and AI tools.
           </p>
         </article>
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section class="section wrap" id="skills" aria-labelledby="skills-title">
-      <div class="section-head reveal">
+    <!-- ================= SKILLS ================= -->
+    <section class="section container" id="skills" aria-labelledby="skills-title">
+      <div class="section-heading reveal">
         <div>
           <span class="eyebrow">03 / Skills & Tools</span>
           <h2 id="skills-title">The toolkit <em>behind the work.</em></h2>
         </div>
       </div>
 
-      <div class="skills-grid">
+      <div class="skills-grid stagger-grid">
         <article class="skill-card panel motion-card reveal">
-          <h3>Digital Marketing</h3>
+          <h3><span aria-hidden="true">↗</span> Digital Marketing</h3>
           <div class="tags">
-            <span>Digital Strategy</span><span>Social Media Marketing</span>
-            <span>Meta Ads</span><span>Google Ads</span>
-            <span>Content Strategy</span><span>Campaign Management</span>
+            <span>Digital Strategy</span>
+            <span>Social Media Marketing</span>
+            <span>Meta Ads</span>
+            <span>Google Ads</span>
+            <span>Content Strategy</span>
+            <span>Campaign Management</span>
             <span>Lead Generation</span>
           </div>
         </article>
 
         <article class="skill-card panel motion-card reveal">
-          <h3>SEO & Analytics</h3>
+          <h3><span aria-hidden="true">◎</span> SEO & Analytics</h3>
           <div class="tags">
-            <span>SEO</span><span>Keyword Research</span>
-            <span>Google Analytics</span><span>Performance Tracking</span>
-            <span>Semrush</span><span>On-Page SEO</span>
+            <span>SEO</span>
+            <span>Keyword Research</span>
+            <span>Google Analytics</span>
+            <span>Performance Tracking</span>
+            <span>Semrush</span>
+            <span>On-Page SEO</span>
           </div>
         </article>
 
         <article class="skill-card panel motion-card reveal">
-          <h3>Design & Content</h3>
+          <h3><span aria-hidden="true">◇</span> Design & Content</h3>
           <div class="tags">
-            <span>Canva</span><span>Graphic Design</span>
-            <span>Content Creation</span><span>Reels & Videos</span>
-            <span>Copywriting</span><span>Creative Campaigns</span>
+            <span>Canva</span>
+            <span>Graphic Design</span>
+            <span>Content Creation</span>
+            <span>Reels & Videos</span>
+            <span>Copywriting</span>
+            <span>Creative Campaigns</span>
           </div>
         </article>
 
         <article class="skill-card panel motion-card reveal">
-          <h3>AI & Technology</h3>
+          <h3><span aria-hidden="true">✦</span> AI & Technology</h3>
           <div class="tags">
-            <span>AI Prompt Engineering</span><span>ChatGPT</span>
-            <span>Claude AI</span><span>Midjourney</span>
-            <span>DALL·E</span><span>WordPress</span>
+            <span>AI Prompt Engineering</span>
+            <span>ChatGPT</span>
+            <span>Claude AI</span>
+            <span>Midjourney</span>
+            <span>DALL·E</span>
+            <span>WordPress</span>
           </div>
         </article>
 
         <article class="skill-card panel motion-card reveal">
-          <h3>Platforms</h3>
+          <h3><span aria-hidden="true">▤</span> Platforms</h3>
           <div class="tags">
-            <span>Instagram</span><span>Facebook</span><span>LinkedIn</span>
-            <span>YouTube</span><span>Meta Business Suite</span><span>HubSpot</span>
+            <span>Instagram</span>
+            <span>Facebook</span>
+            <span>LinkedIn</span>
+            <span>YouTube</span>
+            <span>Meta Business Suite</span>
+            <span>HubSpot</span>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section class="section wrap" id="experience" aria-labelledby="experience-title">
-      <div class="section-head reveal">
+    <!-- ================= EXPERIENCE ================= -->
+    <section class="section container" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading reveal">
         <div>
           <span class="eyebrow">04 / Experience</span>
           <h2 id="experience-title">Learning. Building. <em>Growing.</em></h2>
         </div>
-        <p>Hands-on experience across personal branding, client work, and campaigns.</p>
+        <p>
+          Hands-on experience across personal branding, client work,
+          and digital campaigns.
+        </p>
       </div>
 
       <div class="timeline">
         <article class="job reveal">
           <div class="job-inner panel">
-            <div class="job-head">
+            <div class="job-heading">
               <div>
                 <h3>Founder & AI Content Creator</h3>
                 <span class="company">Okkaustav · Personal Brand</span>
@@ -1227,6 +459,7 @@
                 <span>Delhi, India · Remote</span>
               </div>
             </div>
+
             <ul>
               <li>Built and scaled a personal brand focused on AI content, prompt engineering, and digital creativity.</li>
               <li>Grew following to 40,000+ followers organically through strategic content and community engagement.</li>
@@ -1235,16 +468,20 @@
               <li>Executed end-to-end content strategy with posting schedules and platform analytics.</li>
               <li>Designed creatives using Canva and AI-powered design tools such as Midjourney and DALL·E.</li>
             </ul>
+
             <div class="tags">
-              <span>Content Strategy</span><span>AI Prompts</span>
-              <span>Organic Growth</span><span>Canva</span><span>Analytics</span>
+              <span>Content Strategy</span>
+              <span>AI Prompts</span>
+              <span>Organic Growth</span>
+              <span>Canva</span>
+              <span>Analytics</span>
             </div>
           </div>
         </article>
 
         <article class="job reveal">
           <div class="job-inner panel">
-            <div class="job-head">
+            <div class="job-heading">
               <div>
                 <h3>Digital Marketing Executive</h3>
                 <span class="company">Travel Visa Holidays</span>
@@ -1254,14 +491,17 @@
                 <span>Delhi, India · On-site</span>
               </div>
             </div>
+
             <ul>
               <li>Managed end-to-end digital marketing operations for a travel and hospitality brand.</li>
               <li>Executed online media management strategies to increase brand visibility and customer acquisition.</li>
               <li>Coordinated digital marketing campaigns across Facebook, Google, and social platforms.</li>
               <li>Monitored and reported on campaign performance metrics to optimize marketing ROI.</li>
             </ul>
+
             <div class="tags">
-              <span>Digital Marketing</span><span>Media Management</span>
+              <span>Digital Marketing</span>
+              <span>Media Management</span>
               <span>Campaign Optimization</span>
             </div>
           </div>
@@ -1269,7 +509,7 @@
 
         <article class="job reveal">
           <div class="job-inner panel">
-            <div class="job-head">
+            <div class="job-heading">
               <div>
                 <h3>Digital Marketing Intern</h3>
                 <span class="company">Online Strikers</span>
@@ -1279,6 +519,7 @@
                 <span>On-site</span>
               </div>
             </div>
+
             <ul>
               <li>Managed digital marketing activities across multiple client projects simultaneously.</li>
               <li>Created Reels, creatives, captions, and AI-assisted content assets for social campaigns.</li>
@@ -1286,18 +527,21 @@
               <li>Tracked engagement metrics including reach, CTR, and conversions, and optimized content using data insights.</li>
               <li>Developed content strategy and audience engagement initiatives to improve campaign results.</li>
             </ul>
+
             <div class="tags">
-              <span>Meta Ads</span><span>Content Creation</span>
-              <span>Client Projects</span><span>Analytics</span>
+              <span>Meta Ads</span>
+              <span>Content Creation</span>
+              <span>Client Projects</span>
+              <span>Analytics</span>
             </div>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- CERTIFICATIONS -->
-    <section class="section wrap" id="certifications" aria-labelledby="cert-title">
-      <div class="section-head reveal">
+    <!-- ================= CERTIFICATIONS ================= -->
+    <section class="section container" id="certifications" aria-labelledby="cert-title">
+      <div class="section-heading reveal">
         <div>
           <span class="eyebrow">05 / Certifications</span>
           <h2 id="cert-title">Always <em>upskilling.</em></h2>
@@ -1305,7 +549,7 @@
         <p>Continuously learning, with more certifications coming soon.</p>
       </div>
 
-      <div class="cert-grid">
+      <div class="cert-grid stagger-grid">
         <article class="cert panel motion-card reveal">
           <span class="cert-symbol" aria-hidden="true">✧</span>
           <div>
@@ -1380,9 +624,9 @@
       </div>
     </section>
 
-    <!-- EDUCATION -->
-    <section class="section wrap" id="education" aria-labelledby="education-title">
-      <div class="section-head reveal">
+    <!-- ================= EDUCATION ================= -->
+    <section class="section container" id="education" aria-labelledby="education-title">
+      <div class="section-heading reveal">
         <div>
           <span class="eyebrow">06 / Education</span>
           <h2 id="education-title">A foundation <em>in business.</em></h2>
@@ -1399,12 +643,14 @@
       </article>
     </section>
 
-    <!-- CONTACT -->
-    <section class="section contact-section wrap" id="contact" aria-labelledby="contact-title">
+    <!-- ================= CONTACT ================= -->
+    <section class="section container" id="contact" aria-labelledby="contact-title">
       <div class="contact-box panel reveal">
         <span class="eyebrow">07 / Let’s Work Together</span>
+
         <h2 id="contact-title">
-          Ready to grow<br><span class="accent">something great?</span>
+          Ready to grow<br>
+          <span>something great?</span>
         </h2>
 
         <p class="contact-copy">
@@ -1414,8 +660,11 @@
           want to connect, I’d love to hear from you.
         </p>
 
-        <div class="buttons">
-          <a class="btn btn-primary" href="mailto:kaustavaswal1@gmail.com">
+        <div class="button-group">
+          <a
+            class="button button-primary magnetic"
+            href="mailto:kaustavaswal1@gmail.com"
+          >
             Start a Conversation <span aria-hidden="true">↗</span>
           </a>
         </div>
@@ -1444,7 +693,7 @@
             rel="noopener noreferrer"
           >
             <span>
-              <small>LinkedIn · opens in a new tab</small>
+              <small>LinkedIn · new tab</small>
               <strong>linkedin.com/in/kaustavaswal</strong>
             </span>
             <span aria-hidden="true">↗</span>
@@ -1457,7 +706,7 @@
             rel="noopener noreferrer"
           >
             <span>
-              <small>GitHub · opens in a new tab</small>
+              <small>GitHub · new tab</small>
               <strong>github.com/uyu23</strong>
             </span>
             <span aria-hidden="true">↗</span>
@@ -1467,150 +716,20 @@
     </section>
   </main>
 
-  <footer class="footer wrap">
+  <footer class="site-footer container">
     <p>© <span id="year">2026</span> Kaustav Aswal</p>
     <p>Digital Marketing Executive · Delhi, India</p>
-
-    <button
-      class="motion-toggle"
-      id="motion-toggle"
-      type="button"
-      aria-pressed="false"
-      hidden
-    >
-      Reduce motion
-    </button>
-
     <a href="#home">Back to top ↑</a>
   </footer>
 
-  <script>
-    (() => {
-      const root = document.documentElement;
-      const motionPreference = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      );
-      const toggle = document.getElementById("motion-toggle");
-      const progress = document.querySelector(".progress");
-
-      let savedPreference = null;
-      try {
-        savedPreference = localStorage.getItem("kaustav-reduce-motion");
-      } catch {
-        // The site still works if browser storage is unavailable.
-      }
-
-      let manualReduction = savedPreference === "true";
-      let observer;
-
-      const motionIsReduced = () =>
-        motionPreference.matches || manualReduction;
-
-      document.getElementById("year").textContent =
-        new Date().getFullYear();
-
-      function revealEverything() {
-        document.querySelectorAll(".reveal.pending").forEach((element) => {
-          element.classList.remove("pending");
-        });
-        if (observer) observer.disconnect();
-      }
-
-      function updateMotion() {
-        root.classList.toggle("motion-off", motionIsReduced());
-        toggle.setAttribute("aria-pressed", String(motionIsReduced()));
-
-        if (motionPreference.matches) {
-          toggle.textContent = "Reduced motion: system setting";
-          toggle.disabled = true;
-        } else {
-          toggle.disabled = false;
-          toggle.textContent = manualReduction
-            ? "Enable motion"
-            : "Reduce motion";
-        }
-
-        if (motionIsReduced()) revealEverything();
-      }
-
-      toggle.hidden = false;
-      updateMotion();
-
-      toggle.addEventListener("click", () => {
-        manualReduction = !manualReduction;
-        try {
-          localStorage.setItem(
-            "kaustav-reduce-motion",
-            String(manualReduction)
-          );
-        } catch {}
-        updateMotion();
-      });
-
-      motionPreference.addEventListener("change", updateMotion);
-
-      // Progressive enhancement: all content is visible without JavaScript.
-      if ("IntersectionObserver" in window && !motionIsReduced()) {
-        observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.remove("pending");
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.06,
-          rootMargin: "0px 0px -15px 0px"
-        });
-
-        document.querySelectorAll(
-          ".services-grid, .skills-grid, .cert-grid"
-        ).forEach((grid) => {
-          Array.from(grid.children).forEach((card, index) => {
-            card.style.setProperty("--delay", `${(index % 3) * 65}ms`);
-          });
-        });
-
-        document.querySelectorAll(".reveal").forEach((element) => {
-          element.classList.add("pending");
-          observer.observe(element);
-        });
-      }
-
-      // Reading progress; requestAnimationFrame limits scroll work.
-      let scrollScheduled = false;
-
-      function updateProgress() {
-        const scrollable =
-          document.documentElement.scrollHeight - window.innerHeight;
-        const ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
-        progress.style.transform =
-          `scaleX(${Math.min(1, Math.max(0, ratio))})`;
-        scrollScheduled = false;
-      }
-
-      window.addEventListener("scroll", () => {
-        if (!scrollScheduled) {
-          scrollScheduled = true;
-          requestAnimationFrame(updateProgress);
-        }
-      }, { passive: true });
-
-      window.addEventListener("resize", updateProgress);
-      updateProgress();
-
-      // Subtle card spotlight for mouse/trackpad users.
-      if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-        document.querySelectorAll(".motion-card").forEach((card) => {
-          card.addEventListener("pointermove", (event) => {
-            if (motionIsReduced()) return;
-            const bounds = card.getBoundingClientRect();
-            card.style.setProperty("--mx", `${event.clientX - bounds.left}px`);
-            card.style.setProperty("--my", `${event.clientY - bounds.top}px`);
-          });
-        });
-      }
-    })();
-  </script>
+  <button
+    id="motion-toggle"
+    class="motion-toggle"
+    type="button"
+    aria-pressed="false"
+    hidden
+  >
+    Reduce motion
+  </button>
 </body>
 </html>
